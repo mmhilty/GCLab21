@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Registration Page";
+
+
+
+}
+
+<h2>Registration</h2>
+<div>
+    <form method="post" action="Welcome">
+        First Name:
+        <input type="text" name="firstname" value="" />
+        Last Name:
+        <input type="text" name="lastname" value=""/><br /><br />
+        Class: <br />
+        <input type="radio" name="userclass" value="fighter" checked ="checked"/> Fighter <br />
+        <input type="radio" name="userclass" value="rogue" /> Rogue <br />
+        <input type="radio" name="userclass" value="mage" /> Mage <br /><br />
+        Gender: <br />
+        <input type="radio" name="gender" value="neutralthem" /> Whatstheirface <br />
+        <input type="radio" name="gender" value="female" /> Whatsherface <br />
+        <input type="radio" name="gender" value="male" /> Whatshisface <br />
+        <input type="radio" name="gender" value="neutralhir" /> Whatshirface <br />
+        <input type="radio" name="gender" value="none" checked ="checked"/> Nope <br /><br />
+        Password:
+        <input type="text" name="password" pattern ="^(?=.*\d).{4,8}$" value=""/> <br /><br />
+
+        <input type="submit" value="submit" />
+    </form>
+
+    @ViewBag.ErrorMessage
+
+</div>
