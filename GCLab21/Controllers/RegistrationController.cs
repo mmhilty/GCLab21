@@ -18,9 +18,9 @@ namespace GCLab21.Controllers
         }
 
         //GET: Registration/Welcome
-        public ActionResult Welcome(string firstname, string lastname, string userclass, string gender, string password)
+        public ActionResult Welcome(string firstname, string lastname, string userclass, string gender, string password, string useremail)
         {
-            ViewBag.newuser = new User(firstname,  lastname,  userclass,  gender,  password);
+            ViewBag.newuser = new User(firstname,  lastname,  userclass,  gender,  password, useremail);
 
 
             if (ViewBag.newuser.FirstName != "" && ViewBag.LastName != "" && ViewBag.Password != "")
