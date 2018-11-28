@@ -1,21 +1,21 @@
 ﻿
 @{
     ViewBag.Title = "Registration Page";
-    ViewBag.pattern1 = @"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}";
-    ViewBag.pattern2 = @"(?=.*\d).{4,8}";
+    ViewBag.emailpattern = @"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}";
+    ViewBag.passwordpattern = @"^(?=.*\d).{4,15}$";
 
 
 }
 
 <h2>Registration</h2>
-<div>
+<div class="registrationform">
     <form method="post" action="Welcome">
         First Name:
         <input type="text" name="firstname" required />
         Last Name:
-        <input type="text" name="lastname" required/><br /><br />
+        <input type="text" name="lastname" required /><br /><br />
         Class: <br />
-        <input type="radio" name="userclass" value="fighter" checked ="checked"/> Fighter <br />
+        <input type="radio" name="userclass" value="fighter" checked="checked" /> Fighter <br />
         <input type="radio" name="userclass" value="rogue" /> Rogue <br />
         <input type="radio" name="userclass" value="mage" /> Mage <br /><br />
         Gender: <br />
@@ -23,12 +23,14 @@
         <input type="radio" name="gender" value="female" /> Whatsherface <br />
         <input type="radio" name="gender" value="male" /> Whatshisface <br />
         <input type="radio" name="gender" value="neutralhir" /> Whatshirface <br />
-        <input type="radio" name="gender" value="none" checked ="checked"/> Nope <br /><br />
-        Email: 
-        <input type="text" name="useremail" pattern="@ViewBag.pattern1" required/>
+        <input type="radio" name="gender" value="none" checked="checked" /> Nope <br /><br />
+        Email:
+        <input type="text" name="useremail" pattern="@ViewBag.emailpattern" required />
         <br />
         Password:
-        <input type="text" name="password"  required/> <br /><br />
+        <input type="password" name="password" pattern="@ViewBag.passwordpattern" required /> <br />
+        Password must be between 4 and 15 digits long and include at least one numeric digit.
+        <br />
 
         <input type="submit" value="submit" />
     </form>
